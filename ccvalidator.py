@@ -6,10 +6,7 @@ def checkcard():
     cardnumber = input("Please input your credit card number: ")
     cardnumber = cardnumber.replace(" ", "")
     n = len(cardnumber)
-    if n != 16:
-        print("Invalid Credit Card.")
-        return 0;
-    for x in range(15, n, -1):
+    for x in range(n-1, n, -1):
         if int(cardnumber[x]) % 2 != 0:
             sum_odds += int(cardnumber[x])
         else:
@@ -26,4 +23,5 @@ def checkcard():
         print("Your credit card number is not valid.")
 
 
-checkcard()
+if __name__ == "__main__":
+    checkcard()
